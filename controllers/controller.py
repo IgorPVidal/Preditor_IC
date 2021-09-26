@@ -10,16 +10,6 @@ class Controller:
     def start(self):
         print("Iniciando.........")
         # verifica se os botões foram acionados
-        if self.view.btn_pandas_profiling_inicial:
-            self.model.gerar_relatorio_inicial()
-            self.view.sucesso_pandas_profiling_inicial()
-            pass
-        pass
-        if self.view.btn_pandas_profiling:
-            self.model.gerar_relatorio()
-            self.view.sucesso_pandas_profiling()
-            pass
-        pass
         if self.view.btn_predict:
             X = [[
                 self.view.idade, 
@@ -35,6 +25,12 @@ class Controller:
             ]]
             predicoes = [self.model.predicao_tempo(X), self.model.predicao_obito(X)]
             self.view.mostra_predicoes(predicoes)
+        elif self.view.btn_pandas_profiling:
+            self.model.gerar_relatorio()
+            self.view.sucesso_pandas_profiling()
+        elif self.view.btn_pandas_profiling_inicial:
+            self.model.gerar_relatorio_inicial()
+            self.view.sucesso_pandas_profiling_inicial()
 
     def get_data(self):
         return self.model.pega_dados()

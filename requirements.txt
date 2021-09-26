@@ -1,0 +1,10 @@
+numpy
+matplotlib
+scipy
+plotly
+sklearn
+pandas
+seaborn
+plotly-express
+https://github.com/pandas-profiling/pandas-profiling/archive/master.zip
+eli5
